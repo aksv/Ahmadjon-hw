@@ -7,5 +7,5 @@ exports.__esModule = true;
 exports.StyledApp = void 0;
 var styled_components_1 = require("styled-components");
 var colors_1 = require("./colors");
-exports.StyledApp = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    min-height: 100vh;\n    background: ", ";\n"], ["\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    min-height: 100vh;\n    background: ", ";\n"])), colors_1["default"].bg);
+exports.StyledApp = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    min-height: 100vh;\n    background: ", ";\n"], ["\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    min-height: 100vh;\n    background: ", ";\n"])), colors_1["default"].grey);
 var templateObject_1;
