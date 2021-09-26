@@ -20,19 +20,7 @@ export const StyledHeader = styled.div`
         align-items: baseline;
         padding: 0 80px;
     }
-    .header__logo{
-        font-size: 22px;
-        line-height: 26px;
-        font-weight: 500;
-        a{
-            color: ${colors.red};
-            text-decoration: none;
-
-            span{
-                font-weight: 900;
-            }
-        }
-    }
+    
     .header__button{
         padding: 11px 18px;
         border-radius: 4px;
