@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../../components/Logo";
 import { StyledHeader } from "../../styles/Header.styled";
 
 
@@ -9,11 +10,7 @@ export default function Header() {
     return(
         <StyledHeader>
             <div className="header__top">
-                <h4 className="header__logo">
-                    <a href="/">
-                        <span>netflix</span>roulette
-                    </a>
-                </h4>
+                <Logo/>
                 <button className="header__button">
                     + Add Movie
                 </button>

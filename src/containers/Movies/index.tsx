@@ -11,6 +11,7 @@ function Movies() {
 
             <MoviesLabel number={39}/>
             <MovieCards />
+            
         </StyledMovies>
     )
 }
