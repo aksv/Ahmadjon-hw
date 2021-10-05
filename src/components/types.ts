@@ -19,3 +19,14 @@ export interface IInput{
     marginRight?: string;
     height?: string;
 }
+
+export interface IMovie{
+    id: string;
+    title: string;
+    rate: string;
+    genre: string;
+    description: string;
+    releaseDate: string;
+    url: string;
+    runtime: string;
+}

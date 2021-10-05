@@ -27,6 +27,7 @@ function Form({
 }:IForm) {
 
     const [data, setData] = useState({
+        id: "",
         title: '',
         releaseDate: '',
         rate: '0',

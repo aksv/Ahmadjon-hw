@@ -1,17 +1,14 @@
 import React from 'react'
 import Card from '../../components/Card'
+import { IMovie } from '../../components/types'
 
-function MovieCards() {
+function MovieCards({data}: {data: IMovie[]}) {
     return (
         <div className="movie__cards">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            {data.map(movie => (
+                
+                <Card movie={movie}/>
+            ))}
         </div >
     )
 }
