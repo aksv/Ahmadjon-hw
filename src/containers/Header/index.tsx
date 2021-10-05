@@ -4,14 +4,18 @@ import { StyledHeader } from "../../styles/Header.styled";
 
 
 
-export default function Header() {
+export default function Header({
+    modalOpen
+}:{
+    modalOpen: () => void
+}) {
 
 
     return(
         <StyledHeader>
             <div className="header__top">
                 <Logo/>
-                <button className="header__button">
+                <button onClick={modalOpen} className="header__button">
                     + Add Movie
                 </button>
             </div>

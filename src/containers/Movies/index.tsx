@@ -5,10 +5,11 @@ import {StyledMovies} from '../../styles/Movies.styled';
 import MovieCards from './MovieCards';
 
 function Movies() {
+    
+
     return (
         <StyledMovies>
             <Tabs />
-
             <MoviesLabel number={39}/>
             <MovieCards />
             
