@@ -17,4 +17,5 @@ export interface IInput{
     name: string;
     width: string;
     marginRight?: string;
+    height?: string;
 }

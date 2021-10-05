@@ -11,10 +11,11 @@ export default function Input({
     id,
     name,
     width,
-    marginRight
+    marginRight,
+    height,
 }:IInput) {
     return (
-        <StyledInput margin={marginRight} width={width}>
+        <StyledInput margin={marginRight} height={height} width={width}>
             <label htmlFor={id}>
                 {label}
             </label>

@@ -1,7 +1,7 @@
 import sty from 'styled-components';
 import clr from './colors';
 
-export const StyledInput = sty.div<{width: string, margin?: string}>`
+export const StyledInput = sty.div<{width: string, margin?: string, height?: string}>`
     display: flex;
     flex-direction: column;
     
@@ -15,11 +15,16 @@ export const StyledInput = sty.div<{width: string, margin?: string}>`
         margin-right: ${props => props.margin || "0px"};
         margin-top: 15px;
         mix-blend-mode: normal;
-        opacity: 0.8;
+        opacity: 0.3;
         border-radius: 4px;
         outline-width: 0px; 
         border: 0.5px solid rgba(50, 50, 50, 0.948044);
         width: ${props => props.width || "300px"};
+        height: ${props => props.height || "100%"};
+    }
+    input:focus, input:active{
+        color: #fff;
+        opacity: 0.8;
     }
     label{
         font-weight: 600;

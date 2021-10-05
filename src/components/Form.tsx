@@ -1,6 +1,7 @@
 import React, {  useState }  from 'react'
 import Modal from 'react-modal';
 import { StyledForm } from '../styles/Form.styled';
+import Button from './Button';
 import Input from './Input';
 import { IForm } from './types';
 
@@ -28,7 +29,7 @@ function Form({
     const [data, setData] = useState({
         title: '',
         releaseDate: '',
-        rate: 0,
+        rate: '0',
         url: '',
         genre: '',
         runtime: '',
@@ -40,22 +41,43 @@ function Form({
         setData((prev) => ({...prev, [name]: value}))
     }
 
+    const submitHandler = (e: any )=> {
+        console.log('submittted');
+    }
+
+    const resetHandler = () => {
+        console.log('resetted')
+    }
     const {title, releaseDate, description, rate, url, genre, runtime, } = data
     return (
 
-        <StyledForm>
-            <Modal 
-                isOpen={isOpen} 
-                onRequestClose={modalClose}
-                style={customStyles}
-                contentLabel={"Add Movie"}
-            >
+        <Modal 
+            isOpen={isOpen} 
+            onRequestClose={modalClose}
+            style={customStyles}
+            // contentLabel={"Add Movie"}
+        >
+            <StyledForm>
+                <div className="row">
+                    <div style={{
+                        color: "#fff",
+                        fontSize: "40px",
+                        fontWeight: 300,
+                        lineHeight: "49px",
+                        textTransform: "uppercase",
+                        letterSpacing: "1px",
+                        marginBottom: "20px"
+                        }} className="form__title">
+                        Add movie
+                    </div>
+                    <button onClick={modalClose} className="modal__btn-close">X</button>
+                </div>
                 <div className="row">
                     <Input 
                         width="525px"
                         label="Title" 
                         name="title"
-                        id="name"
+                        id="title"
                         type="text"
                         placeholder="Enter title"
                         value={title}
@@ -73,9 +95,66 @@ function Form({
                         onchange={changeHandler}
                     />
                 </div>
+                <div className="row">
+                    <Input 
+                        width="525px"
+                        label="Movie Url" 
+                        name="url"
+                        id="url"
+                        type="text"
+                        placeholder="https://"
+                        value={url}
+                        onchange={changeHandler}
+                        marginRight="40px"
+                    />
+                    <Input 
+                        width="300px"
+                        label="Rating" 
+                        name="rate"
+                        id="rate"
+                        type="text"
+                        placeholder="Select Date"
+                        value={rate}
+                        onchange={changeHandler}
+                    />
+                </div>
+                <div className="row">
+                    <Input 
+                        width="525px"
+                        label="Genre" 
+                        name="genre"
+                        id="genre"
+                        type="text"
+                        placeholder="Select genre"
+                        value={genre}
+                        onchange={changeHandler}
+                        marginRight="40px"
+                    />
+                    <Input 
+                        width="300px"
+                        label="Runtime" 
+                        name="runtime"
+                        id="runtime"
+                        type="text"
+                        placeholder="Minutes"
+                        value={runtime}
+                        onchange={changeHandler}
+                    />
+                </div>
+                <textarea 
+                    name="description"
+                    id="description"
+                    placeholder="Movie description"
+                    value={description}
+                    onChange={changeHandler}
+                />
+                <div className="row mt-20 justtify-right mr-40">
+                    <Button handler={submitHandler} bg="transparent" label="RESET"/>
+                    <Button handler={resetHandler} bg="" label="SUBMIT"/>
+                </div>
+            </StyledForm>
 
-            </Modal>
-        </StyledForm>
+        </Modal>
     )
 }
 

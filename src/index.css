@@ -17,5 +17,14 @@ code {
 }
 .row{
   display: flex;
-  
+  margin-bottom: 15px;
+}
+.mt-20{
+  margin-top: 20px !important;
+}
+.justtify-right{
+  justify-content: flex-end;
+}
+.mr-40{
+  margin-right: 40px !important;
 }
