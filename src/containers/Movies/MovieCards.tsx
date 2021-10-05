@@ -1,13 +1,12 @@
 import React from 'react'
 import Card from '../../components/Card'
-import { IMovie } from '../../components/types'
+import { IMovie, IMoviesCards } from '../../components/types'
 
-function MovieCards({data}: {data: IMovie[]}) {
+function MovieCards({data, edit, add, deleteHandler}:IMoviesCards) {
     return (
         <div className="movie__cards">
             {data.map(movie => (
-                
-                <Card movie={movie}/>
+                <Card edit={edit} deleteHandler={deleteHandler} movie={movie}/>
             ))}
         </div >
     )

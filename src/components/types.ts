@@ -6,6 +6,7 @@ export interface ITabs{
 export interface IForm{
     isOpen: boolean;
     modalClose: () => void;
+    addMovie: any
 }
 export interface IInput{
     value: string;
@@ -29,4 +30,11 @@ export interface IMovie{
     releaseDate: string;
     url: string;
     runtime: string;
+}
+
+export interface IMoviesCards{
+    data: IMovie[];
+    edit: any;
+    add: any;
+    deleteHandler: any
 }

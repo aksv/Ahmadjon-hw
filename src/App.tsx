@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from './components/Form';
 import Logo from './components/Logo';
+import { IMovie } from './components/types';
 import Header from './containers/Header';
 import Movies from './containers/Movies';
 import movies from './db/movies';
@@ -11,14 +12,24 @@ function App() {
   const [data, setData] = useState(movies);
 
   const deleteMovie = (id:any) => {
-    const udpated = data.filter(i => i.id !==id)
+    const udpated = data.filter(i => i.id !== id)
+    setData(udpated)
+  }
+
+  const addHandler = (movie: IMovie) => {
+    setData([{...movie, id: `${data.length + 1}`}, ...data])
+  }
+
+  const editHandler = (id: string) => {
+    // I will implement this one with API
+    console.log('edit handler')
   }
 
   return (
     <StyledApp>
       <Header modalOpen={() => setModalIsOpen(true)}/>
-      <Form isOpen={modalIsOpen} modalClose={() => setModalIsOpen(false)}/>
-      <Movies data={data}/>
+      <Form addMovie={addHandler} isOpen={modalIsOpen} modalClose={() => setModalIsOpen(false)}/>
+      <Movies edit={editHandler} add={addHandler} deleteHandler={deleteMovie} data={data}/>
       <Logo/>
     </StyledApp>
   );

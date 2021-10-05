@@ -6,14 +6,17 @@ export default styled.div`
     width: 320px;
     min-height: 560px;
     margin: 0 20px;
-
+    position: relative;
     .card__img{
         width: 100%;
         min-height: 320px;
 
     }
     .card__btns{
-        display: none;
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 20px;
     }
     .card__info{
         width: 100;

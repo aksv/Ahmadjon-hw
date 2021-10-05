@@ -2,16 +2,16 @@ import React from 'react'
 import CardStyled from '../styles/Card.styled'
 import cardImage from '../assets/img/card.png';
 import { IMovie } from './types';
-function Card({movie}:{movie: IMovie}) {
+function Card({movie, deleteHandler, edit }:{movie: IMovie,  deleteHandler: any, edit:any}) {
     return (
         <CardStyled>
             <div className="card__img">
                 <img src={cardImage} alt=""/>
                 <div className="card__btns">
-                    <button className="card__btn">
+                    <button onClick={()=> edit(movie.id)} className="card__btn">
                         Edit
                     </button>
-                    <button className="card__btn">
+                    <button onClick={() => deleteHandler(movie.id)} className="card__btn">
                         Delete
                     </button>
                 </div>

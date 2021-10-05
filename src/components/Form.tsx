@@ -23,7 +23,8 @@ Modal.setAppElement('#modal');
 
 function Form({
     isOpen,
-    modalClose
+    modalClose,
+    addMovie
 }:IForm) {
 
     const [data, setData] = useState({
@@ -43,10 +44,24 @@ function Form({
     }
 
     const submitHandler = (e: any )=> {
-        console.log('submittted');
+
+        console.log('submittted', data);
+        addMovie(data)
+        resetHandler()
+        modalClose()
     }
 
     const resetHandler = () => {
+        setData({
+            id: "",
+            title: '',
+            releaseDate: '',
+            rate: '0',
+            url: '',
+            genre: '',
+            runtime: '',
+            description:'',
+        })
         console.log('resetted')
     }
     const {title, releaseDate, description, rate, url, genre, runtime, } = data
@@ -150,8 +165,8 @@ function Form({
                     onChange={changeHandler}
                 />
                 <div className="row mt-20 justtify-right mr-40">
-                    <Button handler={submitHandler} bg="transparent" label="RESET"/>
-                    <Button handler={resetHandler} bg="" label="SUBMIT"/>
+                    <Button handler={resetHandler} bg="transparent" label="RESET"/>
+                    <Button handler={submitHandler} bg="" label="SUBMIT"/>
                 </div>
             </StyledForm>
 
