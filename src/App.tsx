@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Form from './components/Form';
+import Form from './components/MovieForm';
 import Logo from './components/Logo';
 import { IMovie } from './components/types';
 import Header from './containers/Header';

@@ -4,6 +4,8 @@ import { StyledForm } from '../styles/Form.styled';
 import Button from './Button';
 import Input from './Input';
 import { IForm } from './types';
+import { Modal as AntModal } from 'antd';
+
 
 const customStyles = {
   content: {
@@ -38,6 +40,13 @@ function Form({
         description:'',
     })
 
+    function success() {
+        AntModal.success({
+          content: 'The movie has been added to database successfully ',
+          title: "congratulations !"
+        });
+      }
+
     const changeHandler = (e: any): void => {
         const {name, value} = e.target;
         setData((prev) => ({...prev, [name]: value}))
@@ -49,6 +58,7 @@ function Form({
         addMovie(data)
         resetHandler()
         modalClose()
+        success()
     }
 
     const resetHandler = () => {
