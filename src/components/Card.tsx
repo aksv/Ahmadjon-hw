@@ -2,18 +2,68 @@ import React from 'react'
 import CardStyled from '../styles/Card.styled'
 import cardImage from '../assets/img/card.png';
 import { IMovie } from './types';
+import { Button, Dropdown, Menu, Modal } from 'antd';
+import { DownOutlined, DeleteOutlined, ExclamationCircleOutlined, EditOutlined } from '@ant-design/icons';
+
+
+const { confirm } = Modal;
+
+
+  
+
 function Card({movie, deleteHandler, edit }:{movie: IMovie,  deleteHandler: any, edit:any}) {
+    
+    const editHandler = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        edit(movie.id)
+    }
+
+    const deleteMovie = () => {
+        deleteHandler(movie.id)
+
+    }
+
+    function showDeleteConfirm() {
+        confirm({
+          title: 'Are you sure delete this movie?',
+          icon: <ExclamationCircleOutlined />,
+          okText: 'Yes',
+          okType: 'danger',
+          cancelText: 'No',
+          onOk() {
+            deleteMovie()
+            console.log('OK');
+          },
+          onCancel() {
+            console.log('Cancel');
+          },
+        });
+      }
+    const menu = (
+        <Menu>
+          <Menu.Item>
+            <Button onClick={editHandler} type="dashed">
+                <EditOutlined />
+            </Button>
+          </Menu.Item>
+          <Menu.Item >
+            <Button onClick={showDeleteConfirm} danger type="dashed">
+                <DeleteOutlined />
+            </Button>
+          </Menu.Item>
+        </Menu>
+      );
+    
     return (
         <CardStyled>
             <div className="card__img">
                 <img src={cardImage} alt=""/>
                 <div className="card__btns">
-                    <button onClick={()=> edit(movie.id)} className="card__btn">
-                        Edit
-                    </button>
-                    <button onClick={() => deleteHandler(movie.id)} className="card__btn">
-                        Delete
-                    </button>
+                    <Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                        <DownOutlined size={25} />
+                        </a>
+                    </Dropdown>
                 </div>
             </div>
             <div className="card__info">

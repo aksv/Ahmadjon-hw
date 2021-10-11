@@ -1,3 +1,5 @@
+import { Button } from 'antd';
+import ButtonGroup from 'antd/lib/button/button-group';
 import React from 'react'
 import MoviesLabel from '../../components/MoviesLabel';
 import Tabs from '../../components/Tabs';
