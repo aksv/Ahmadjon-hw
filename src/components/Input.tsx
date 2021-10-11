@@ -14,6 +14,28 @@ export default function Input({
     marginRight,
     height,
 }:IInput) {
+    if(type === 'select'){
+        return(
+            <StyledInput margin={marginRight} height={height} width={width}>
+                <label htmlFor={id}>
+                    {label}
+                </label>
+                <select 
+                    
+                    name={name}
+                    id={id}
+                    placeholder={placeholder} 
+                    value={value} 
+                    onChange={onchange} 
+                >
+                    <option value="documentary">Documentary</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="horror">Horror</option>
+                    <option value="crime">Crime</option>
+                </select>
+            </StyledInput>
+        )
+    }
     return (
         <StyledInput margin={marginRight} height={height} width={width}>
             <label htmlFor={id}>

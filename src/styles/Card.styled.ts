@@ -52,5 +52,6 @@ export default styled.div`
         mix-blend-mode: normal;
         opacity: 0.5;
     }
+    
 
 `

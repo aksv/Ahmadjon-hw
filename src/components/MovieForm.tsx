@@ -115,7 +115,7 @@ function Form({
                         label="Release Date" 
                         name="releaseDate"
                         id="releaseDate"
-                        type="text"
+                        type="date"
                         placeholder="Select Date"
                         value={releaseDate}
                         onchange={changeHandler}
@@ -150,7 +150,7 @@ function Form({
                         label="Genre" 
                         name="genre"
                         id="genre"
-                        type="text"
+                        type="select"
                         placeholder="Select genre"
                         value={genre}
                         onchange={changeHandler}
