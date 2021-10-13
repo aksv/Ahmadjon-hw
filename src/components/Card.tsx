@@ -11,7 +11,7 @@ const { confirm } = Modal;
 
   
 
-function Card({movie, deleteHandler, edit }:{movie: IMovie,  deleteHandler: any, edit:any}) {
+function Card({movie, deleteHandler, edit, selectMovieHandler }:{movie: IMovie, selectMovieHandler: (id:string)=>{},  deleteHandler: any, edit:any}) {
     
     const editHandler = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -55,7 +55,7 @@ function Card({movie, deleteHandler, edit }:{movie: IMovie,  deleteHandler: any,
       );
     
     return (
-        <CardStyled>
+        <CardStyled onClick={() => selectMovieHandler(movie.id)}>
             <div className="card__img">
                 <img src={cardImage} alt=""/>
                 <div className="card__btns">

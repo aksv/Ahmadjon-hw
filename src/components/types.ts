@@ -37,5 +37,6 @@ export interface IMoviesCards{
     edit: any;
     add: any;
     deleteHandler: any;
+    selectMovieHandler: (id:string) => {};
     
 }

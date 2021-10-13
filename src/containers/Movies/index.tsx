@@ -7,14 +7,14 @@ import { IMovie, IMoviesCards } from '../../components/types';
 import {StyledMovies} from '../../styles/Movies.styled';
 import MovieCards, { IMovieCards } from './MovieCards';
 
-function Movies({ data, edit, add, deleteHandler, filterMovies }:IMovieCards) {
+function Movies({ data, edit, add, deleteHandler, filterMovies, selectMovieHandler }:IMovieCards) {
     
 
     return (
         <StyledMovies>
             <Tabs filterMovies={filterMovies} />
             <MoviesLabel number={data.length}/>
-            <MovieCards  edit={edit} add={add} deleteHandler={deleteHandler} data={data} />
+            <MovieCards  selectMovieHandler={selectMovieHandler}  edit={edit} add={add} deleteHandler={deleteHandler} data={data} />
             
         </StyledMovies>
     )
