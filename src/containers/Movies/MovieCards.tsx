@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../../components/Card'
-import { IMovie, IMoviesCards } from '../../components/types'
+import { IMoviesCards } from '../../components/types'
 
 export interface IMovieCards extends IMoviesCards{
     filterMovies: (id:string) => {};

@@ -2,10 +2,10 @@ import React from 'react'
 import MovieDetailsStyled from '../styles/MovieDetails.styled'
 import Logo from './Logo'
 import { SearchOutlined, } from '@ant-design/icons';
-import { IMovie } from './types';
 import fakeImg from '../assets/img/card.png';
-function MovieDetails({data}: any) {
-    const {url, title, rate, genre, description, runtime }:IMovie = data;
+
+function MovieDetails({data, selectedMovieHandler}: any) {
+    const { title, rate, genre, description, runtime }:any = data;
     console.log(
         data
     )
@@ -13,7 +13,7 @@ function MovieDetails({data}: any) {
         <MovieDetailsStyled>
             <div className="header">
                 <Logo/>
-                <SearchOutlined style={{fontSize: "20px", color:"#F65261"}} />
+                <SearchOutlined onClick={() => selectedMovieHandler("")} style={{fontSize: "20px", color:"#F65261"}} />
             </div>
             <div className="body">
                 <div className="img">

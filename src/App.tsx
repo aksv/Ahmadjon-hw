@@ -11,7 +11,7 @@ import MovieDetails from './components/MovieDetails';
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
   const [data, setData] = useState(movies);
-  const [selectedMovie, setSelectedMovie] = useState<IMovie>()
+  const [selectedMovie, setSelectedMovie] = useState<IMovie | null>()
 
   const deleteMovie = (id:any) => {
     const udpated = data.filter(i => i.id !== id)
@@ -39,9 +39,14 @@ function App() {
   }
 
   const selectedMovieHandler = (id:string):any => {
-    const foundMovie = data.find(item => item.id === id)
-    setSelectedMovie(foundMovie)
+    if(id !== ""){
+      const foundMovie = data.find(item => item.id === id)
+      setSelectedMovie(foundMovie)
+    }else{
+      setSelectedMovie(null)
+    }
   }
+
 
   return (
     <StyledApp>
@@ -52,7 +57,7 @@ function App() {
       }
       {
         selectedMovie && (
-          <MovieDetails data={selectedMovie} />
+          <MovieDetails data={selectedMovie} selectedMovieHandler={selectedMovieHandler}/>
         )
       }
       <Form addMovie={addHandler} isOpen={modalIsOpen} modalClose={() => setModalIsOpen(false)}/>
