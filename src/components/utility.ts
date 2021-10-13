@@ -11,10 +11,10 @@ export const tabs = [
         id: 'comedy',
         title: 'Comedy',
     },
-    {   
+    {
         id: 'horror',
         title: 'Horror',
-    },  
+    },
     {
         id: 'crime',
         title: 'Crime',

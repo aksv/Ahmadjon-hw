@@ -5,11 +5,11 @@ function Button({
     label,
     handler,
     bg
-}:{
+}: {
     label: string;
     handler: any;
     bg?: string
-} ){
+}) {
     return (
         <StyledBtn bg={bg} onClick={handler}>
             {label}

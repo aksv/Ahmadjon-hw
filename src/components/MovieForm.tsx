@@ -1,4 +1,4 @@
-import React, {  useState }  from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal';
 import { StyledForm } from '../styles/Form.styled';
 import Button from './Button';
@@ -8,16 +8,16 @@ import { Modal as AntModal } from 'antd';
 
 
 const customStyles = {
-  content: {
-    padding: "20px",
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: "#232323"
-  },
+    content: {
+        padding: "20px",
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: "#232323"
+    },
 };
 
 
@@ -27,7 +27,7 @@ function Form({
     isOpen,
     modalClose,
     addMovie
-}:IForm) {
+}: IForm) {
 
     const [data, setData] = useState({
         id: "",
@@ -37,22 +37,22 @@ function Form({
         url: '',
         genre: '',
         runtime: '',
-        description:'',
+        description: '',
     })
 
     function success() {
         AntModal.success({
-          content: 'The movie has been added to database successfully ',
-          title: "congratulations !"
+            content: 'The movie has been added to database successfully ',
+            title: "congratulations !"
         });
-      }
-
-    const changeHandler = (e: any): void => {
-        const {name, value} = e.target;
-        setData((prev) => ({...prev, [name]: value}))
     }
 
-    const submitHandler = (e: any )=> {
+    const changeHandler = (e: any): void => {
+        const { name, value } = e.target;
+        setData((prev) => ({ ...prev, [name]: value }))
+    }
+
+    const submitHandler = (e: any) => {
 
         console.log('submittted', data);
         addMovie(data)
@@ -70,18 +70,18 @@ function Form({
             url: '',
             genre: '',
             runtime: '',
-            description:'',
+            description: '',
         })
         console.log('resetted')
     }
-    const {title, releaseDate, description, rate, url, genre, runtime, } = data
+    const { title, releaseDate, description, rate, url, genre, runtime, } = data
     return (
 
-        <Modal 
-            isOpen={isOpen} 
+        <Modal
+            isOpen={isOpen}
             onRequestClose={modalClose}
             style={customStyles}
-            // contentLabel={"Add Movie"}
+        // contentLabel={"Add Movie"}
         >
             <StyledForm>
                 <div className="row">
@@ -93,15 +93,15 @@ function Form({
                         textTransform: "uppercase",
                         letterSpacing: "1px",
                         marginBottom: "20px"
-                        }} className="form__title">
+                    }} className="form__title">
                         Add movie
                     </div>
                     <button onClick={modalClose} className="modal__btn-close">X</button>
                 </div>
                 <div className="row">
-                    <Input 
+                    <Input
                         width="525px"
-                        label="Title" 
+                        label="Title"
                         name="title"
                         id="title"
                         type="text"
@@ -110,9 +110,9 @@ function Form({
                         onchange={changeHandler}
                         marginRight="40px"
                     />
-                    <Input 
+                    <Input
                         width="300px"
-                        label="Release Date" 
+                        label="Release Date"
                         name="releaseDate"
                         id="releaseDate"
                         type="date"
@@ -122,9 +122,9 @@ function Form({
                     />
                 </div>
                 <div className="row">
-                    <Input 
+                    <Input
                         width="525px"
-                        label="Movie Url" 
+                        label="Movie Url"
                         name="url"
                         id="url"
                         type="text"
@@ -133,9 +133,9 @@ function Form({
                         onchange={changeHandler}
                         marginRight="40px"
                     />
-                    <Input 
+                    <Input
                         width="300px"
-                        label="Rating" 
+                        label="Rating"
                         name="rate"
                         id="rate"
                         type="text"
@@ -145,9 +145,9 @@ function Form({
                     />
                 </div>
                 <div className="row">
-                    <Input 
+                    <Input
                         width="525px"
-                        label="Genre" 
+                        label="Genre"
                         name="genre"
                         id="genre"
                         type="select"
@@ -156,9 +156,9 @@ function Form({
                         onchange={changeHandler}
                         marginRight="40px"
                     />
-                    <Input 
+                    <Input
                         width="300px"
-                        label="Runtime" 
+                        label="Runtime"
                         name="runtime"
                         id="runtime"
                         type="text"
@@ -167,7 +167,7 @@ function Form({
                         onchange={changeHandler}
                     />
                 </div>
-                <textarea 
+                <textarea
                     name="description"
                     id="description"
                     placeholder="Movie description"
@@ -175,8 +175,8 @@ function Form({
                     onChange={changeHandler}
                 />
                 <div className="row mt-20 justtify-right mr-40">
-                    <Button handler={resetHandler} bg="transparent" label="RESET"/>
-                    <Button handler={submitHandler} bg="" label="SUBMIT"/>
+                    <Button handler={resetHandler} bg="transparent" label="RESET" />
+                    <Button handler={submitHandler} bg="" label="SUBMIT" />
                 </div>
             </StyledForm>
 

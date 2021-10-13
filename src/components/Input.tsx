@@ -13,20 +13,20 @@ export default function Input({
     width,
     marginRight,
     height,
-}:IInput) {
-    if(type === 'select'){
-        return(
+}: IInput) {
+    if (type === 'select') {
+        return (
             <StyledInput margin={marginRight} height={height} width={width}>
                 <label htmlFor={id}>
                     {label}
                 </label>
-                <select 
-                    
+                <select
+
                     name={name}
                     id={id}
-                    placeholder={placeholder} 
-                    value={value} 
-                    onChange={onchange} 
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={onchange}
                 >
                     <option value="documentary">Documentary</option>
                     <option value="comedy">Comedy</option>
@@ -41,14 +41,14 @@ export default function Input({
             <label htmlFor={id}>
                 {label}
             </label>
-            <input 
-                
+            <input
+
                 name={name}
                 id={id}
-                type={type} 
-                placeholder={placeholder} 
-                value={value} 
-                onChange={onchange} 
+                type={type}
+                placeholder={placeholder}
+                value={value}
+                onChange={onchange}
             />
         </StyledInput>
     )

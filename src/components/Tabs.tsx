@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ITabs } from './types'
 import { tabs } from './utility'
 
-function Tabs({filterMovies}: {filterMovies: (id:string)=> {}}) {
+function Tabs({ filterMovies }: { filterMovies: (id: string) => {} }) {
 
 
     const [activeTab, setActiveTab] = useState<string>('all')
@@ -15,14 +15,14 @@ function Tabs({filterMovies}: {filterMovies: (id:string)=> {}}) {
 
     const renderTabs = () => {
         return tablsList.map((tab, index) => (
-            <li onClick={() => handleClick(tab.id)} key={index} className={tab.id === activeTab ? ' tab--active tab': "tab"}>
-                    {tab.title}
+            <li onClick={() => handleClick(tab.id)} key={index} className={tab.id === activeTab ? ' tab--active tab' : "tab"}>
+                {tab.title}
             </li>
         ))
     }
 
     const selectHandler = (e: { target: { value: any } }) => {
-        const {value} = e.target;
+        const { value } = e.target;
         filterMovies(value)
     }
 
@@ -44,7 +44,7 @@ function Tabs({filterMovies}: {filterMovies: (id:string)=> {}}) {
                 </select>
             </div>
         </div>
-        
+
     )
 }
 

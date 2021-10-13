@@ -1,14 +1,14 @@
-export interface ITabs{
+export interface ITabs {
     title: string;
     id: string;
 }
 
-export interface IForm{
+export interface IForm {
     isOpen: boolean;
     modalClose: () => void;
     addMovie: any
 }
-export interface IInput{
+export interface IInput {
     value: string;
     placeholder: string;
     label: string;
@@ -21,7 +21,7 @@ export interface IInput{
     height?: string;
 }
 
-export interface IMovie{
+export interface IMovie {
     id: string;
     title: string;
     rate: string;
@@ -32,11 +32,11 @@ export interface IMovie{
     runtime: string;
 }
 
-export interface IMoviesCards{
+export interface IMoviesCards {
     data: IMovie[];
     edit: any;
     add: any;
     deleteHandler: any;
-    selectMovieHandler: (id:string) => {};
-    
+    selectMovieHandler: (id: string) => {};
+
 }
