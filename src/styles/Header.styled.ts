@@ -13,6 +13,7 @@ export const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    padding-top: 20px;
 
     .header__top{
         display: flex;

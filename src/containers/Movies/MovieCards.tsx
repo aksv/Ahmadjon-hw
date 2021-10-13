@@ -8,7 +8,7 @@ function MovieCards({data, edit, add, deleteHandler}:IMoviesCards) {
             {data.map(movie => (
                 <Card edit={edit} deleteHandler={deleteHandler} movie={movie}/>
             ))}
-        </div >
+        </div>
     )
 }
 

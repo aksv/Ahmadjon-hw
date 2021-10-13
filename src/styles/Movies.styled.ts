@@ -12,6 +12,7 @@ export const StyledMovies = styled.div`
     .tabs__container{
         display: flex;
         padding: 0px 20px;
+        padding-top: 20px;
         align-items: center;
     }
 

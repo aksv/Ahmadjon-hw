@@ -61,7 +61,7 @@ function Card({movie, deleteHandler, edit }:{movie: IMovie,  deleteHandler: any,
                 <div className="card__btns">
                     <Dropdown overlay={menu}>
                         <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                        <DownOutlined size={25} />
+                        <DownOutlined style={{fontSize: "20px"}} />
                         </a>
                     </Dropdown>
                 </div>
