@@ -25,11 +25,22 @@ function App() {
     console.log('edit handler')
   }
 
+  const filterMovies = (id:string):any =>{
+    if(id === 'all'){
+      setData(movies)
+    }else{
+      const sortedList = movies.filter(item => item.genre === id);
+      setData(sortedList);
+      console.log(sortedList,'sorted list', )
+      console.log(data, id,'DATA list', )
+    }
+  }
+
   return (
     <StyledApp>
       <Header modalOpen={() => setModalIsOpen(true)}/>
       <Form addMovie={addHandler} isOpen={modalIsOpen} modalClose={() => setModalIsOpen(false)}/>
-      <Movies edit={editHandler} add={addHandler} deleteHandler={deleteMovie} data={data}/>
+      <Movies filterMovies={filterMovies}  edit={editHandler} add={addHandler} deleteHandler={deleteMovie} data={data}/>
       <Logo/>
     </StyledApp>
   );

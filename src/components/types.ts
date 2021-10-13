@@ -36,5 +36,6 @@ export interface IMoviesCards{
     data: IMovie[];
     edit: any;
     add: any;
-    deleteHandler: any
+    deleteHandler: any;
+    
 }

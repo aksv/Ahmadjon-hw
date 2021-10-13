@@ -19,4 +19,8 @@ export const tabs = [
         id: 'crime',
         title: 'Crime',
     },
+    {
+        id: 'advanture',
+        title: 'Advanture',
+    },
 ]

@@ -5,7 +5,7 @@ import { StyledHeader } from "../../styles/Header.styled";
 
 
 export default function Header({
-    modalOpen
+    modalOpen,
 }:{
     modalOpen: () => void
 }) {
