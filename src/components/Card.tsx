@@ -13,8 +13,9 @@ const { confirm } = Modal;
 
 function Card({ movie, deleteHandler, edit, selectMovieHandler }: { movie: IMovie, selectMovieHandler: (id: string) => {}, deleteHandler: any, edit: any }) {
 
-  const editHandler = (e: { preventDefault: () => void; }) => {
+  const editHandler = (e: { preventDefault: () => void, stopPropagation: () => void }) => {
     e.preventDefault();
+    e.stopPropagation();
     edit(movie.id)
   }
 
