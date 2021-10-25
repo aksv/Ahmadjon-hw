@@ -7,12 +7,16 @@ import Movies from "./containers/Movies";
 import movies from "./db/movies";
 import { StyledApp } from "./styles/App.styled";
 import MovieDetails from "./components/MovieDetails";
+import { useAppDispatch, useAppSelector } from "./store/hooks";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [data, setData] = useState(movies);
   const [selectedMovie, setSelectedMovie] = useState<IMovie | null>();
-
+  const movieStore = useAppSelector(state => state.movies);
+  const dispatch = useAppDispatch();
+  
+  console.log(movieStore, 'movie store');
   const deleteMovie = (id: any) => {
     const udpated = data.filter((i) => i.id !== id);
     setData(udpated);
@@ -33,8 +37,6 @@ function App() {
     } else {
       const sortedList = movies.filter((item) => item.genre === id);
       setData(sortedList);
-      console.log(sortedList, "sorted list");
-      console.log(data, id, "DATA list");
     }
   };
 
