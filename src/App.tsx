@@ -8,15 +8,18 @@ import movies from "./db/movies";
 import { StyledApp } from "./styles/App.styled";
 import MovieDetails from "./components/MovieDetails";
 import { useAppDispatch, useAppSelector } from "./store/hooks";
+import { getMovies } from "./store/Movie/actions";
+import { AppDispatch } from "./store";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [data, setData] = useState(movies);
   const [selectedMovie, setSelectedMovie] = useState<IMovie | null>();
   const movieStore = useAppSelector(state => state.movies);
-  const dispatch = useAppDispatch();
-  
+  const dispatch: AppDispatch = useAppDispatch();
+
   console.log(movieStore, 'movie store');
+
   const deleteMovie = (id: any) => {
     const udpated = data.filter((i) => i.id !== id);
     setData(udpated);
@@ -49,6 +52,9 @@ function App() {
     }
   };
 
+  dispatch(getMovies());
+  // console.log(movieStore, 'movie store');
+  
   return (
     <StyledApp>
       {!selectedMovie && <Header modalOpen={() => setModalIsOpen(true)} />}

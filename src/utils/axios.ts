@@ -1,9 +1,10 @@
 import Axios from "axios";
 import keys from '../configs';
 import store from "../store";
-import { loading } from "../store/Auth/actions";
-import { SIGN_OUT_SUCCESS } from "../store/Auth/actionTypes";
-import { useSelector } from 'react-redux';
+// import store from "../store";
+// import { loading } from "../store/Auth/actions";
+// import { SIGN_OUT_SUCCESS } from "../store/Auth/actionTypes";
+// import { useSelector } from 'react-redux';
 
 
 
@@ -12,7 +13,7 @@ const baseURL =
     ? keys.BASE_URL.development
     : keys.BASE_URL.production;
 
-const axios = Axios.create({ baseURL, withCredentials: true });
+const axios = Axios.create({ baseURL, withCredentials: false });
 
 // axios.interceptors.request.use((configs) => {
 //   store.dispatch(loading(true));
@@ -37,4 +38,4 @@ const axios = Axios.create({ baseURL, withCredentials: true });
 //   }
 // );
 
-export default axios;
+export default axios; 
