@@ -13,6 +13,7 @@ const baseURL =
     ? keys.BASE_URL.development
     : keys.BASE_URL.production;
 
+console.log(baseURL);
 const axios = Axios.create({ baseURL, withCredentials: false });
 
 // axios.interceptors.request.use((configs) => {
